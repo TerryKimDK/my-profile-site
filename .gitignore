@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node.js (향후 패키지 사용 시)
+node_modules/
+npm-debug.log*
+.env
+.env.local
+
+# Build output
+dist/
+build/
+
+# Claude Code local settings
+.claude/settings.local.json
