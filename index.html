@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김동규 | SAP 개발자</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            indigo: {
+              50:  '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- ===== NAV ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#hero" class="text-xl font-bold gradient-text">DK.</a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <li><a href="#about"    class="nav-link text-slate-600 hover:text-blue-600 transition-colors">About</a></li>
+        <li><a href="#skills"   class="nav-link text-slate-600 hover:text-blue-600 transition-colors">Skills</a></li>
+        <li><a href="#projects" class="nav-link text-slate-600 hover:text-blue-600 transition-colors">Projects</a></li>
+        <li>
+          <a href="#contact"
+             class="nav-link inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2 rounded-xl hover:opacity-90 transition-opacity shadow-sm">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="메뉴 열기">
+        <svg id="menu-icon-open" class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="menu-icon-close" class="w-5 h-5 text-slate-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100 px-6 pb-4">
+      <ul class="flex flex-col gap-4 pt-4 text-sm font-medium">
+        <li><a href="#about"    class="block text-slate-600 hover:text-blue-600 transition-colors">About</a></li>
+        <li><a href="#skills"   class="block text-slate-600 hover:text-blue-600 transition-colors">Skills</a></li>
+        <li><a href="#projects" class="block text-slate-600 hover:text-blue-600 transition-colors">Projects</a></li>
+        <li><a href="#contact"  class="block text-slate-600 hover:text-blue-600 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero-bg min-h-screen flex items-center pt-16">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <div class="max-w-3xl">
+        <p class="text-blue-600 font-semibold text-sm tracking-widest uppercase mb-4 reveal">안녕하세요, 저는</p>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 reveal">
+          <span class="gradient-text">김동규</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-slate-500 mb-6 reveal">
+          SAP 개발자<span class="cursor"></span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-xl mb-10 reveal">
+          SAP BTP와 ABAP을 기반으로 기업 시스템의 클라우드 전환을 설계하고 구현합니다.
+          통합 솔루션부터 FIORI 앱까지, 비즈니스 가치를 코드로 만듭니다.
+        </p>
+        <div class="flex flex-wrap gap-4 reveal">
+          <a href="#projects"
+             class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-7 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity shadow-md hover:shadow-lg">
+            포트폴리오 보기
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="#contact"
+             class="inline-flex items-center gap-2 border-2 border-blue-600 text-blue-600 px-7 py-3 rounded-xl font-semibold hover:bg-blue-50 hover:border-purple-600 hover:text-purple-600 transition-colors">
+            연락하기
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row gap-16 items-center">
+
+        <!-- Avatar -->
+        <div class="reveal flex-shrink-0">
+          <div class="w-48 h-48 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-xl">
+            <span class="text-7xl font-bold text-white select-none">DK</span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="flex-1">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2 reveal">About Me</h2>
+          <div class="w-12 h-1 bg-blue-600 rounded mb-8 reveal"></div>
+          <div class="space-y-4 text-slate-600 leading-relaxed text-lg reveal">
+            <p>
+              SAP BTP와 ABAP을 전문으로 하는 개발자입니다.
+            </p>
+            <p>
+              클라우드 통합 솔루션 설계부터 FIORI 앱 개발까지, 기업 시스템의 디지털 전환을 이끌어왔습니다.
+            </p>
+            <p>
+              복잡한 비즈니스 프로세스를 효율적인 기술로 구현하는 것을 즐깁니다.
+            </p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3 reveal">
+            <span class="px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">SAP BTP</span>
+            <span class="px-4 py-1.5 bg-purple-50 text-purple-700 rounded-full text-sm font-semibold">Cloud Native</span>
+            <span class="px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold">Enterprise Integration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2 reveal">Skills</h2>
+        <div class="w-12 h-1 bg-blue-600 rounded mx-auto reveal"></div>
+        <p class="mt-4 text-slate-500 reveal">주요 기술 스택</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 reveal">
+
+        <!-- SAP BTP -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">SAP BTP</span>
+        </div>
+
+        <!-- Integration Suite -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">Integration Suite</span>
+        </div>
+
+        <!-- ABAP -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">ABAP</span>
+        </div>
+
+        <!-- Cloud ABAP -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">Cloud ABAP</span>
+        </div>
+
+        <!-- SQL -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">SQL</span>
+        </div>
+
+        <!-- FIORI -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">SAP FIORI</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">JavaScript</span>
+        </div>
+
+        <!-- Groovy -->
+        <div class="skill-badge flex flex-col items-center gap-3 p-6 border border-slate-200 rounded-2xl bg-white">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
+            </svg>
+          </div>
+          <span class="text-sm font-semibold text-slate-700">Groovy</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2 reveal">Projects</h2>
+        <div class="w-12 h-1 bg-blue-600 rounded mx-auto reveal"></div>
+        <p class="mt-4 text-slate-500 reveal">주요 프로젝트 및 포트폴리오</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
+          <div class="h-1.5 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 border border-blue-100">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">SAP BTP Integration Hub</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+              SAP Integration Suite를 활용한 온프레미스-클라우드 하이브리드 통합 플랫폼 구축.
+              iFlow 설계 및 Groovy 스크립트 기반 데이터 변환 처리.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SAP BTP</span>
+              <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-semibold">Integration Suite</span>
+              <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">Groovy</span>
+            </div>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-purple-600 transition-colors group">
+              자세히 보기
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
+          <div class="h-1.5 bg-gradient-to-r from-purple-500 to-violet-500"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-50 to-violet-50 flex items-center justify-center mb-6 border border-purple-100">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">FIORI Dashboard App</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+              SAP FIORI Elements 기반 실시간 KPI 모니터링 대시보드.
+              OData V4 서비스와 ABAP RAP 모델로 백엔드 구현.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-semibold">FIORI</span>
+              <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">ABAP</span>
+              <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-semibold">JavaScript</span>
+            </div>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-purple-600 hover:text-blue-600 transition-colors group">
+              자세히 보기
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
+          <div class="h-1.5 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center mb-6 border border-blue-100">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-3">ABAP Cloud Migration</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
+              Legacy ABAP 코드베이스를 Cloud ABAP 및 RAP 모델로 마이그레이션.
+              Clean Core 원칙 적용 및 SQL 쿼리 최적화.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">ABAP</span>
+              <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-semibold">Cloud ABAP</span>
+              <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">SQL</span>
+            </div>
+            <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-purple-600 transition-colors group">
+              자세히 보기
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-2 reveal">Contact</h2>
+      <div class="w-12 h-1 bg-blue-600 rounded mx-auto reveal"></div>
+      <p class="mt-6 text-slate-500 text-lg max-w-xl mx-auto reveal">
+        프로젝트 협업이나 기술 문의는 아래로 연락주세요.
+      </p>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center reveal">
+
+        <!-- Email -->
+        <a href="mailto:kimdongkyuterry@gmail.com"
+           class="contact-link inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold shadow-md hover:opacity-90 transition-opacity">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          kimdongkyuterry@gmail.com
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/username" target="_blank" rel="noopener noreferrer"
+           class="contact-link inline-flex items-center gap-3 border-2 border-slate-300 text-slate-700 px-8 py-4 rounded-xl font-semibold hover:border-blue-400 hover:text-blue-600 transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-8 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-slate-400 text-sm">© 2026 김동규. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

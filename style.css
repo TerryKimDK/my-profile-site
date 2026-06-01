@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2563eb, #9333ea);
+  border-radius: 3px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Nav scrolled state */
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero background pattern */
+.hero-bg {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(at 30% 20%, rgba(37, 99, 235, 0.10) 0px, transparent 55%),
+    radial-gradient(at 85% 10%, rgba(147, 51, 234, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 60%,  rgba(124, 58, 237, 0.06) 0px, transparent 50%);
+}
+
+/* Skill badge hover */
+.skill-badge {
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-badge:hover {
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.05);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+}
+
+/* Project card hover */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: #2563eb;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* Contact link hover */
+.contact-link {
+  transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Mobile menu transition */
+#mobile-menu {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
